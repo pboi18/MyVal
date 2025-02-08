@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import type React from "react";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = localFont({
   src: "../public/fonts/Inter-Regular.woff2",
@@ -25,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} font-sans bg-pink-100 min-h-screen`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
