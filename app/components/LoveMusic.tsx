@@ -1,44 +1,58 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef } from "react";
+import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 const LoveMusic = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [autoplayFailed, setAutoplayFailed] = useState(false);
 
-  useEffect(() => {
+  const togglePlay = () => {
     if (audioRef.current) {
-      audioRef.current.volume = 0.5; // Set volume to 50%
-      const playPromise = audioRef.current.play();
-
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play().catch((error) => {
           console.warn(
-            "Autoplay was prevented. User interaction may be needed to start audio.",
+            "Playback was prevented. User interaction may be needed to start audio.",
             error
           );
-          setAutoplayFailed(true);
         });
       }
+      setIsPlaying(!isPlaying);
     }
-  }, []);
+  };
+
+  const toggleMute = () => {
+    if (audioRef.current) {
+      audioRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
 
   return (
-    <>
+    <div className="fixed bottom-4 right-4 z-50 flex items-center space-x-2">
       <audio
         ref={audioRef}
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ed-Sheeran-Perfect-Instrumental-Prod.-By-benny-blanco-Ed-Sheeran-Will-Hicks-E8nUXzC6PyWR65STOv9ZU4nIv8nNH3.mp3"
         loop
       />
-      {autoplayFailed && (
-        <div className="fixed bottom-4 right-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded z-50">
-          <p>
-            Music autoplay was blocked. Please interact with the page to enable
-            music.
-          </p>
-        </div>
-      )}
-    </>
+      <button
+        onClick={togglePlay}
+        className="bg-red-500 hover:bg-red-600 text-white rounded-full p-3 shadow-lg transition-colors duration-200"
+        aria-label={isPlaying ? "Pause music" : "Play music"}
+      >
+        {isPlaying ? <Pause size={24} /> : <Play size={24} />}
+      </button>
+      <button
+        onClick={toggleMute}
+        className="bg-pink-500 hover:bg-pink-600 text-white rounded-full p-3 shadow-lg transition-colors duration-200"
+        aria-label={isMuted ? "Unmute music" : "Mute music"}
+      >
+        {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+      </button>
+    </div>
   );
 };
 
