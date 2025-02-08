@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Valentine's Day Website 💖
 
-## Getting Started
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Next.js](https://img.shields.io/badge/Next.js-14.0.3-black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.3.0-blue)
 
-First, run the development server:
+A charming and interactive Valentine's Day website built with Next.js and Tailwind CSS. Ask your special someone to be your Valentine with style! Perfect for creating a memorable and interactive Valentine's Day experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Valentine's Website Preview](public/love-emoji.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 💕 Animated background with floating hearts and flowers
+- 🎵 Background music (auto-playing, if supported by the browser)
+- 👆 Interactive "Yes" and "No" buttons with playful animations
+- 🔄 Reset functionality to play again
+- 💌 Personalized love notes generator with romantic quotes
+- 🖼️ Shareable Valentine's Day card with download option
+- ⏳ Love countdown timer to Valentine's Day
+- 📱 Fully responsive design for all devices
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Live Demo
 
-## Learn More
+Check out the live demo [here](https://your-demo-link.vercel.app)
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Before you begin, ensure you have met the following requirements:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- Git
 
-## Deploy on Vercel
+## 📦 Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/pboi18/MyVal.git
+   cd valentine-website
+   ```

@@ -3,19 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 228, 230;
+  --background-end-rgb: 255, 182, 193;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+.animate-float-1 {
+  animation: float 5s ease-in-out infinite;
+}
+.animate-float-2 {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-3 {
+  animation: float 7s ease-in-out infinite;
+}
+.animate-float-4 {
+  animation: float 8s ease-in-out infinite;
+}
+.animate-float-5 {
+  animation: float 9s ease-in-out infinite;
 }
